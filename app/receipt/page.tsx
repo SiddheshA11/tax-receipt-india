@@ -222,7 +222,7 @@ export default function ReceiptPage() {
         </section>
 
         {/* Interest callout */}
-        <div className="rounded-xl border border-red-900/50 bg-red-950/20 px-5 py-4 mb-8">
+        <div className="rounded-xl border border-red-900/50 bg-red-950/20 px-5 py-4 mb-4">
           <p className="text-red-400 text-sm font-semibold mb-1">Where does it go?</p>
           <p className="text-zinc-300 text-sm leading-relaxed">
             Of your {fmtINR(total)}, roughly{" "}
@@ -230,6 +230,18 @@ export default function ReceiptPage() {
             directly to servicing India&apos;s debt — before any school, hospital, or road.
           </p>
         </div>
+
+        {/* Flow CTA */}
+        <Link
+          href="/flow"
+          className="flex items-center justify-between w-full rounded-xl border border-amber-500/30 bg-amber-500/5 hover:bg-amber-500/10 px-5 py-4 mb-8 transition-colors group"
+        >
+          <div>
+            <p className="text-amber-400 text-sm font-semibold mb-0.5">See exactly where it goes →</p>
+            <p className="text-zinc-500 text-xs">Spending breakdown · India vs the world · eye-opening comparisons</p>
+          </div>
+          <span className="text-amber-400 text-xl group-hover:translate-x-1 transition-transform shrink-0 ml-3">→</span>
+        </Link>
 
         {/* OG image preview */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
