@@ -1,0 +1,26 @@
+{
+  "fiscal_year": "2026-27",
+  "source_primary": "https://prsindia.org/files/budget/budget_parliament/2026/Union_Budget_Analysis-2026-27.pdf",
+  "source_official": "https://www.indiabudget.gov.in/",
+  "totals": {
+    "total_expenditure": 5347315,
+    "total_receipts_ex_borrowing": 3651547,
+    "borrowing": 1695768,
+    "fiscal_deficit_pct_gdp": 4.3,
+    "debt_to_gdp_pct": 55.6
+  },
+  "expenditure_top": [
+    { "id": "interest", "category": "Interest payments", "amount": 1390302, "pct_total_exp": 26.0, "note": "Servicing past borrowing", "source": "PRS 2026-27" },
+    { "id": "defence", "category": "Defence", "amount": 784678, "pct_total_exp": 14.7, "note": "Largest ministry", "source": "PRS 2026-27" },
+    { "id": "subsidies", "category": "Subsidies", "amount": 454773, "pct_total_exp": 8.5, "breakdown": { "food": 227629, "fertilizer": 170799, "lpg": 11824, "other": 44521 }, "source": "PRS 2026-27" },
+    { "id": "pensions", "category": "Govt pensions", "amount": 296214, "pct_total_exp": 5.5, "source": "PRS 2026-27" },
+    { "id": "capex", "category": "Capital expenditure", "amount": 1220000, "pct_total_exp": 22.8, "note": "Roads, railways, infra", "source": "Budget speech 2026-27" },
+    { "id": "schemes", "category": "Centrally sponsored schemes", "amount": 989885, "pct_total_exp": 18.5, "source": "PRS 2026-27" },
+    { "id": "other", "category": "Other", "amount": 212143, "pct_total_exp": 4.0, "source": "Calculated residual" }
+  ],
+  "committed_expenditure_pct_revenue": 65.3,
+  "underspending_2025_26": [
+    { "scheme": "Jal Jeevan Mission", "unspent_cr": 50000 },
+    { "scheme": "Centrally sponsored schemes (total)", "unspent_cr": 203802, "pct_underspent": 19 }
+  ]
+}
