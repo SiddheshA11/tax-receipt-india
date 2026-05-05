@@ -131,6 +131,13 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-[#fafafa]">
+      {/* ── Top nav ── */}
+      <nav className="max-w-lg mx-auto px-4 pt-5 flex justify-between items-center">
+        <span className="text-xs text-zinc-600 font-medium tracking-wide uppercase">Tax Receipt India</span>
+        <a href="/flow" className="text-xs text-zinc-500 hover:text-amber-400 transition-colors">
+          Budget breakdown →
+        </a>
+      </nav>
       <form
         id="tax-form"
         onSubmit={handleSubmit}

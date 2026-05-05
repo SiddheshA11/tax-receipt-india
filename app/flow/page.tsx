@@ -654,133 +654,227 @@ export default function FlowPage() {
           })}
         </div>
 
-        {/* ── Eye-opening stats ── */}
-        <section className="mt-10">
-          <h2 className="text-xs tracking-widest text-zinc-500 uppercase mb-4">What the numbers actually mean</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <div className="rounded-xl border border-red-900/40 bg-red-950/20 px-4 py-4">
-              <p className="text-red-400 text-xs font-semibold uppercase tracking-wide mb-1">Your debt interest share</p>
-              <p className="text-2xl font-black text-red-300 mb-1">{fmtINR(Math.round(breakdown.totalTax.mid * 0.26))}</p>
-              <p className="text-zinc-400 text-xs leading-relaxed">26% of everything you paid goes straight to creditors — before a single school, hospital, or road.</p>
+        {/* ── Your money, personalised ── */}
+        <section className="mt-12">
+          <p className="text-xs tracking-widest text-zinc-500 uppercase mb-5">Your money, decoded</p>
+
+          {/* Hero card: working days */}
+          <div className="rounded-2xl bg-gradient-to-br from-red-950/60 via-red-950/20 to-transparent border border-red-900/50 px-6 py-6 mb-3">
+            <p className="text-red-400 text-xs font-semibold uppercase tracking-widest mb-4">You worked this many days just to service old government debt</p>
+            <div className="flex items-end gap-3 mb-3">
+              <span className="text-7xl font-black text-red-100 leading-none">
+                {(Math.round((breakdown.totalTax.mid * 0.26) / (breakdown.grossIncome / 250) * 10) / 10).toFixed(1)}
+              </span>
+              <span className="text-2xl font-semibold text-red-400 pb-1">days</span>
             </div>
-            <div className="rounded-xl border border-zinc-800 bg-zinc-900/50 px-4 py-4">
-              <p className="text-amber-400 text-xs font-semibold uppercase tracking-wide mb-2">Interest beats all social spending</p>
-              <p className="text-zinc-100 text-sm font-bold">₹13.9L Cr → debt interest</p>
-              <p className="text-zinc-500 text-xs my-1">vs</p>
-              <p className="text-zinc-400 text-xs">Defence ₹7.85L Cr + Education ₹1.1L Cr + Health ₹0.9L Cr <span className="text-zinc-600">= ₹9.85L Cr</span></p>
-              <p className="text-amber-400 text-xs mt-2 font-medium">Debt costs 41% more than defence + education + health combined.</p>
+            <p className="text-zinc-400 text-sm">
+              Your {fmtINR(Math.round(breakdown.totalTax.mid * 0.26))} debt interest share ÷ your daily income of {fmtINR(Math.round(breakdown.grossIncome / 250))}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 gap-3">
+            <div className="rounded-xl border border-zinc-800 bg-zinc-900/60 px-4 py-4">
+              <p className="text-zinc-500 text-xs uppercase tracking-wide mb-2">Your interest share</p>
+              <p className="text-2xl font-black text-red-300 leading-none">{fmtINR(Math.round(breakdown.totalTax.mid * 0.26))}</p>
+              <p className="text-zinc-600 text-xs mt-1.5">of your total tax paid</p>
             </div>
-            <div className="rounded-xl border border-zinc-800 bg-zinc-900/50 px-4 py-4">
-              <p className="text-amber-400 text-xs font-semibold uppercase tracking-wide mb-1">Locked before any welfare</p>
-              <p className="text-3xl font-black text-zinc-100 mb-1">65%</p>
-              <p className="text-zinc-400 text-xs leading-relaxed">of all revenue receipts are already committed to interest, defence salaries, and pensions before any welfare scheme gets a rupee.</p>
-            </div>
-            <div className="rounded-xl border border-zinc-800 bg-zinc-900/50 px-4 py-4">
-              <p className="text-amber-400 text-xs font-semibold uppercase tracking-wide mb-1">Borrowed this year</p>
-              <p className="text-3xl font-black text-zinc-100 mb-1">₹17L Cr</p>
-              <p className="text-zinc-400 text-xs leading-relaxed">India borrowed ₹16.96 lakh crore in FY 2026-27 just to cover the gap between what it earns and what it spends.</p>
+            <div className="rounded-xl border border-zinc-800 bg-zinc-900/60 px-4 py-4">
+              <p className="text-zinc-500 text-xs uppercase tracking-wide mb-2">Share going to debt</p>
+              <p className="text-2xl font-black text-amber-400 leading-none">26%</p>
+              <p className="text-zinc-600 text-xs mt-1.5">of every rupee collected</p>
             </div>
           </div>
         </section>
 
-        {/* ── Spending breakdown ── */}
+        {/* ── National scale ── */}
         <section className="mt-10">
-          <h2 className="text-xs tracking-widest text-zinc-500 uppercase mb-4">For every ₹100 of tax collected</h2>
-          <div className="space-y-3">
+          <p className="text-xs tracking-widest text-zinc-500 uppercase mb-5">The national scale</p>
+          <div className="space-y-2.5">
+
+            <div className="rounded-xl border border-red-900/30 bg-gradient-to-r from-red-950/30 to-transparent p-4 flex items-start gap-4">
+              <div className="shrink-0 mt-0.5 w-10 h-10 rounded-full bg-red-950/60 border border-red-900/40 flex items-center justify-center">
+                <svg className="w-4 h-4 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                  <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+                </svg>
+              </div>
+              <div>
+                <p className="text-zinc-100 text-sm font-bold mb-0.5">₹44,000 per second, non-stop</p>
+                <p className="text-zinc-500 text-xs leading-relaxed">India spends ₹44,083 every single second — day and night, 365 days a year — just on debt interest. That&apos;s ₹2.64 crore per minute, ₹158 crore per hour.</p>
+              </div>
+            </div>
+
+            <div className="rounded-xl border border-zinc-800 bg-zinc-900/40 p-4 flex items-start gap-4">
+              <div className="shrink-0 mt-0.5 w-10 h-10 rounded-full bg-zinc-800/80 flex items-center justify-center">
+                <svg className="w-4 h-4 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                </svg>
+              </div>
+              <div>
+                <p className="text-zinc-100 text-sm font-bold mb-0.5">₹1.17 lakh owed per citizen</p>
+                <p className="text-zinc-500 text-xs leading-relaxed">Every Indian — including newborns — owes ₹1.17 lakh to the central government&apos;s debt (55.6% debt-to-GDP). A family of four owes ₹4.68 lakh before they spend a single rupee.</p>
+              </div>
+            </div>
+
+            <div className="rounded-xl border border-zinc-800 bg-zinc-900/40 p-4 flex items-start gap-4">
+              <div className="shrink-0 mt-0.5 w-10 h-10 rounded-full bg-zinc-800/80 flex items-center justify-center">
+                <svg className="w-4 h-4 text-zinc-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                  <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/>
+                </svg>
+              </div>
+              <div>
+                <p className="text-zinc-100 text-sm font-bold mb-0.5">Interest beats Defence + Education + Health combined</p>
+                <p className="text-zinc-500 text-xs leading-relaxed">₹13.9L Cr in interest &gt; defence (₹7.85L Cr) + education (₹1.1L Cr) + health (₹0.9L Cr) = ₹9.85L Cr. India pays more to creditors than to its army, schools, and hospitals — together.</p>
+              </div>
+            </div>
+
+            <div className="rounded-xl border border-zinc-800 bg-zinc-900/40 p-4 flex items-start gap-4">
+              <div className="shrink-0 mt-0.5 w-10 h-10 rounded-full bg-zinc-800/80 flex items-center justify-center">
+                <svg className="w-4 h-4 text-zinc-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                  <rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
+                </svg>
+              </div>
+              <div>
+                <p className="text-zinc-100 text-sm font-bold mb-0.5">Only 85 million of 1.4 billion pay income tax</p>
+                <p className="text-zinc-500 text-xs leading-relaxed">Just 6% of Indians file income tax returns. The formal salaried workforce — people like you — effectively cross-subsidises the entire welfare system for the other 94%.</p>
+              </div>
+            </div>
+
+            <div className="rounded-xl border border-zinc-800 bg-zinc-900/40 p-4 flex items-start gap-4">
+              <div className="shrink-0 mt-0.5 w-10 h-10 rounded-full bg-zinc-800/80 flex items-center justify-center">
+                <svg className="w-4 h-4 text-zinc-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+              </div>
+              <div>
+                <p className="text-zinc-100 text-sm font-bold mb-0.5">65 paise of every ₹1 of revenue is pre-committed</p>
+                <p className="text-zinc-500 text-xs leading-relaxed">Interest + defence salaries + pensions absorb 65% of all revenue receipts before the government can spend a single rupee on schools, roads, or hospitals.</p>
+              </div>
+            </div>
+
+            <div className="rounded-xl border border-amber-900/20 bg-gradient-to-r from-amber-950/20 to-transparent p-4 flex items-start gap-4">
+              <div className="shrink-0 mt-0.5 w-10 h-10 rounded-full bg-amber-950/40 border border-amber-900/30 flex items-center justify-center">
+                <svg className="w-4 h-4 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                  <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                </svg>
+              </div>
+              <div>
+                <p className="text-zinc-100 text-sm font-bold mb-0.5">India has run a deficit every year since 1947</p>
+                <p className="text-zinc-500 text-xs leading-relaxed">The FY 2026-27 fiscal deficit is 4.3% of GDP. India has never once balanced its books since independence — meaning the debt pile, and the interest on it, only compounds year after year.</p>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        {/* ── For every ₹100 ── */}
+        <section className="mt-10">
+          <p className="text-xs tracking-widest text-zinc-500 uppercase mb-1">For every ₹100 the government spends</p>
+          <p className="text-zinc-500 text-xs mb-6">FY 2026-27 Union Budget allocation</p>
+          <div className="space-y-5">
             {([
-              { label: "Interest payments", pct: 26.0, color: "bg-red-500", amount: "₹13.9L Cr", note: "Paying off past borrowing" },
-              { label: "Capital expenditure", pct: 22.8, color: "bg-blue-500", amount: "₹12.2L Cr", note: "Roads, railways, infra" },
-              { label: "Centrally sponsored schemes", pct: 18.5, color: "bg-amber-500", amount: "₹9.9L Cr", note: "MGNREGS, PM Awas, Jal Jeevan…" },
-              { label: "Defence", pct: 14.7, color: "bg-zinc-400", amount: "₹7.85L Cr", note: "Largest ministry by budget" },
-              { label: "Subsidies", pct: 8.5, color: "bg-emerald-600", amount: "₹4.55L Cr", note: "87% food + fertilizer" },
-              { label: "Govt pensions", pct: 5.5, color: "bg-purple-500", amount: "₹2.96L Cr", note: "" },
-              { label: "Other", pct: 4.0, color: "bg-zinc-700", amount: "₹2.12L Cr", note: "" },
-            ] as { label: string; pct: number; color: string; amount: string; note: string }[]).map(({ label, pct, color, amount, note }) => (
-              <div key={label}>
-                <div className="flex justify-between text-xs mb-1">
-                  <span className="text-zinc-200 font-medium">{label}</span>
-                  <span className="text-zinc-500 font-mono tabular-nums">₹{pct.toFixed(0)} &nbsp;·&nbsp; {amount}</span>
+              { label: "Interest payments", pct: 26.0, amount: "₹13.9L Cr", note: "Paying creditors for past borrowing", bar: "bg-red-500", text: "text-red-400" },
+              { label: "Capital expenditure", pct: 22.8, amount: "₹12.2L Cr", note: "Roads, railways, airports, defence hardware", bar: "bg-sky-500", text: "text-sky-400" },
+              { label: "Central schemes", pct: 18.5, amount: "₹9.9L Cr", note: "MGNREGS, PM Awas Yojana, Jal Jeevan Mission, PMGSY", bar: "bg-amber-500", text: "text-amber-400" },
+              { label: "Defence", pct: 14.7, amount: "₹7.85L Cr", note: "India's single largest ministry by budget", bar: "bg-zinc-400", text: "text-zinc-300" },
+              { label: "Subsidies", pct: 8.5, amount: "₹4.55L Cr", note: "87% goes to food (PDS) and fertilizer", bar: "bg-emerald-500", text: "text-emerald-400" },
+              { label: "Govt pensions", pct: 5.5, amount: "₹2.96L Cr", note: "Civil service, defence, railways", bar: "bg-purple-400", text: "text-purple-300" },
+              { label: "Other", pct: 4.0, amount: "₹2.12L Cr", note: "Residual expenditure", bar: "bg-zinc-600", text: "text-zinc-400" },
+            ] as { label: string; pct: number; amount: string; note: string; bar: string; text: string }[]).map(({ label, pct, amount, note, bar, text }) => (
+              <div key={label} className="flex gap-4 items-start">
+                <div className="shrink-0 w-12 text-right pt-0.5">
+                  <span className={`text-3xl font-black ${text} leading-none tabular-nums`}>₹{Math.round(pct)}</span>
                 </div>
-                <div className="h-2 rounded-full bg-zinc-800 overflow-hidden">
-                  <div className={`h-full rounded-full ${color} transition-all`} style={{ width: `${pct * 3.6}%` }} />
+                <div className="flex-1">
+                  <div className="flex items-baseline gap-2 mb-1.5">
+                    <span className="text-zinc-100 text-sm font-semibold">{label}</span>
+                    <span className="text-zinc-600 text-xs shrink-0">{amount}</span>
+                  </div>
+                  <div className="h-2 rounded-full bg-zinc-800 mb-1.5 overflow-hidden">
+                    <div className={`h-full rounded-full ${bar}`} style={{ width: `${(pct / 26) * 100}%` }} />
+                  </div>
+                  <p className="text-zinc-600 text-xs leading-snug">{note}</p>
                 </div>
-                {note ? <p className="text-zinc-600 text-[10px] mt-0.5">{note}</p> : null}
               </div>
             ))}
           </div>
-          <p className="text-zinc-700 text-xs mt-4">Source: Union Budget 2026-27 · PRS India Budget Analysis</p>
+          <p className="text-zinc-700 text-xs mt-6 pt-4 border-t border-zinc-800/60">Source: Union Budget 2026-27 · PRS India Budget Analysis Feb 2026</p>
         </section>
 
         {/* ── India vs the world ── */}
         <section className="mt-10">
-          <h2 className="text-xs tracking-widest text-zinc-500 uppercase mb-2">India vs the world</h2>
-          <p className="text-zinc-400 text-sm mb-6">India collects far less tax as a share of GDP than most major economies — yet spends one of the highest shares on debt interest.</p>
+          <p className="text-xs tracking-widest text-zinc-500 uppercase mb-2">India vs the world</p>
+          <p className="text-zinc-100 text-base font-semibold mb-1">Low tax. High debt interest. The worst of both worlds.</p>
+          <p className="text-zinc-500 text-sm mb-7 leading-relaxed">India ranks near the bottom for tax revenue as a share of GDP — but near the top for the share of spending eaten by debt interest.</p>
+
           <div className="grid sm:grid-cols-2 gap-8">
-
-            {/* Tax-to-GDP */}
             <div>
-              <p className="text-xs text-zinc-500 uppercase tracking-wide font-medium mb-3">Tax revenue as % of GDP <span className="normal-case text-zinc-600">(lower = less funded)</span></p>
-              <div className="space-y-2.5">
+              <p className="text-xs text-zinc-400 uppercase tracking-wide font-semibold mb-4">Tax revenue as % of GDP <span className="text-zinc-600 normal-case font-normal">(higher = more funded)</span></p>
+              <div className="space-y-3">
                 {([
-                  { country: "France", pct: 45.4 },
-                  { country: "Germany", pct: 39.3 },
-                  { country: "UK", pct: 35.3 },
-                  { country: "OECD avg", pct: 33.9 },
-                  { country: "Brazil", pct: 31.4 },
-                  { country: "USA", pct: 27.1 },
-                  { country: "South Africa", pct: 26.6 },
-                  { country: "China", pct: 21.0 },
-                  { country: "Indonesia", pct: 13.7 },
-                  { country: "India", pct: 11.4, highlight: true },
-                ] as { country: string; pct: number; highlight?: boolean }[]).map(({ country, pct, highlight }) => (
-                  <div key={country}>
-                    <div className="flex justify-between text-xs mb-0.5">
-                      <span className={highlight ? "text-amber-400 font-semibold" : "text-zinc-400"}>{country}{highlight ? " 🇮🇳" : ""}</span>
-                      <span className={`font-mono tabular-nums ${highlight ? "text-amber-400 font-semibold" : "text-zinc-500"}`}>{pct}%</span>
-                    </div>
-                    <div className="h-1.5 rounded-full bg-zinc-800">
-                      <div className={`h-full rounded-full ${highlight ? "bg-amber-400" : "bg-zinc-600"}`} style={{ width: `${(pct / 50) * 100}%` }} />
+                  { country: "France", flag: "🇫🇷", pct: 45.4 },
+                  { country: "Germany", flag: "🇩🇪", pct: 39.3 },
+                  { country: "UK", flag: "🇬🇧", pct: 35.3 },
+                  { country: "OECD avg", flag: "🌍", pct: 33.9 },
+                  { country: "Brazil", flag: "🇧🇷", pct: 31.4 },
+                  { country: "USA", flag: "🇺🇸", pct: 27.1 },
+                  { country: "South Africa", flag: "🇿🇦", pct: 26.6 },
+                  { country: "China", flag: "🇨🇳", pct: 21.0 },
+                  { country: "Indonesia", flag: "🇮🇩", pct: 13.7 },
+                  { country: "India", flag: "🇮🇳", pct: 11.4, hi: true },
+                ] as { country: string; flag: string; pct: number; hi?: boolean }[]).map(({ country, flag, pct, hi }) => (
+                  <div key={country} className="flex items-center gap-2.5">
+                    <span className="text-base w-5 shrink-0">{flag}</span>
+                    <div className="flex-1">
+                      <div className="flex justify-between items-center mb-0.5">
+                        <span className={`text-xs font-medium ${hi ? "text-amber-300" : "text-zinc-400"}`}>{country}</span>
+                        <span className={`text-xs font-mono tabular-nums ${hi ? "text-amber-300 font-bold" : "text-zinc-500"}`}>{pct}%</span>
+                      </div>
+                      <div className="h-2 rounded-full bg-zinc-800 overflow-hidden">
+                        <div className={`h-full rounded-full ${hi ? "bg-amber-400" : "bg-zinc-600"}`} style={{ width: `${(pct / 50) * 100}%` }} />
+                      </div>
                     </div>
                   </div>
                 ))}
               </div>
-              <p className="text-zinc-700 text-[10px] mt-3">Sources: OECD Revenue Statistics 2024 · IMF 2024</p>
+              <p className="text-zinc-700 text-[10px] mt-4">Sources: OECD Revenue Statistics 2024 · IMF Fiscal Monitor 2024</p>
             </div>
 
-            {/* Debt interest % of spending */}
             <div>
-              <p className="text-xs text-zinc-500 uppercase tracking-wide font-medium mb-3">Debt interest as % of spending <span className="normal-case text-zinc-600">(higher = more debt-trapped)</span></p>
-              <div className="space-y-2.5">
+              <p className="text-xs text-zinc-400 uppercase tracking-wide font-semibold mb-4">Debt interest as % of spending <span className="text-zinc-600 normal-case font-normal">(lower = less debt-trapped)</span></p>
+              <div className="space-y-3">
                 {([
-                  { country: "Germany", pct: 4 },
-                  { country: "France", pct: 5 },
-                  { country: "China", pct: 6 },
-                  { country: "OECD avg", pct: 7 },
-                  { country: "UK", pct: 8 },
-                  { country: "Indonesia", pct: 12 },
-                  { country: "USA", pct: 12 },
-                  { country: "South Africa", pct: 15 },
-                  { country: "Brazil", pct: 28 },
-                  { country: "India", pct: 26, highlight: true },
-                ] as { country: string; pct: number; highlight?: boolean }[]).sort((a, b) => a.pct - b.pct).map(({ country, pct, highlight }) => (
-                  <div key={country}>
-                    <div className="flex justify-between text-xs mb-0.5">
-                      <span className={highlight ? "text-red-400 font-semibold" : "text-zinc-400"}>{country}{highlight ? " 🇮🇳" : ""}</span>
-                      <span className={`font-mono tabular-nums ${highlight ? "text-red-400 font-semibold" : "text-zinc-500"}`}>{pct}%</span>
-                    </div>
-                    <div className="h-1.5 rounded-full bg-zinc-800">
-                      <div className={`h-full rounded-full ${highlight ? "bg-red-500" : "bg-zinc-600"}`} style={{ width: `${(pct / 30) * 100}%` }} />
+                  { country: "Germany", flag: "🇩🇪", pct: 4 },
+                  { country: "France", flag: "🇫🇷", pct: 5 },
+                  { country: "China", flag: "🇨🇳", pct: 6 },
+                  { country: "OECD avg", flag: "🌍", pct: 7 },
+                  { country: "UK", flag: "🇬🇧", pct: 8 },
+                  { country: "Indonesia", flag: "🇮🇩", pct: 12 },
+                  { country: "USA", flag: "🇺🇸", pct: 12 },
+                  { country: "South Africa", flag: "🇿🇦", pct: 15 },
+                  { country: "India", flag: "🇮🇳", pct: 26, hi: true },
+                  { country: "Brazil", flag: "🇧🇷", pct: 28 },
+                ] as { country: string; flag: string; pct: number; hi?: boolean }[]).sort((a, b) => a.pct - b.pct).map(({ country, flag, pct, hi }) => (
+                  <div key={country} className="flex items-center gap-2.5">
+                    <span className="text-base w-5 shrink-0">{flag}</span>
+                    <div className="flex-1">
+                      <div className="flex justify-between items-center mb-0.5">
+                        <span className={`text-xs font-medium ${hi ? "text-red-300" : "text-zinc-400"}`}>{country}</span>
+                        <span className={`text-xs font-mono tabular-nums ${hi ? "text-red-300 font-bold" : "text-zinc-500"}`}>{pct}%</span>
+                      </div>
+                      <div className="h-2 rounded-full bg-zinc-800 overflow-hidden">
+                        <div className={`h-full rounded-full ${hi ? "bg-red-500" : "bg-zinc-600"}`} style={{ width: `${(pct / 30) * 100}%` }} />
+                      </div>
                     </div>
                   </div>
                 ))}
               </div>
-              <p className="text-zinc-700 text-[10px] mt-3">Sources: IMF Fiscal Monitor 2024 · World Bank 2024</p>
+              <p className="text-zinc-700 text-[10px] mt-4">Sources: IMF Fiscal Monitor 2024 · World Bank Government Finance Statistics 2024</p>
             </div>
-
           </div>
-          <div className="mt-6 rounded-xl border border-zinc-800 bg-zinc-900/40 px-4 py-3">
-            <p className="text-zinc-400 text-xs leading-relaxed">
-              <span className="text-zinc-200 font-medium">What this means:</span> India is a low-tax country overall — but the formal salaried class bears a disproportionate burden since only ~85 million people file income tax returns out of 1.4 billion. Meanwhile, the government devotes more to debt interest than almost any peer economy, leaving less for schools, hospitals, and public services.
+
+          <div className="mt-6 rounded-2xl border border-zinc-800 bg-gradient-to-br from-zinc-900/80 to-zinc-900/20 px-5 py-4">
+            <p className="text-zinc-300 text-sm leading-relaxed">
+              <span className="text-white font-semibold">The paradox: </span>India is one of the world&apos;s lowest-tax states by GDP share — yet channels more of that spending into debt interest than almost any peer. With only 6% of the population paying income tax, the government borrows to fill the gap, compounding a debt burden that crowds out spending on the 94% who need it most.
             </p>
           </div>
         </section>

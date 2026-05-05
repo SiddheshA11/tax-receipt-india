@@ -65,16 +65,16 @@ export default function RootLayout({
             <p>
               Built by{" "}
               <a
-                href="https://github.com/siddheshagarwal"
+                href="https://github.com/SiddheshA11"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-amber-400 hover:text-amber-300 transition-colors"
               >
-                Siddesh Agarwal
+                Siddhesh Agarwal
               </a>{" "}
               ·{" "}
               <a
-                href="https://github.com/siddheshagarwal/tax-receipt-india"
+                href="https://github.com/SiddheshA11/tax-receipt-india"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-amber-400 hover:text-amber-300 transition-colors"
