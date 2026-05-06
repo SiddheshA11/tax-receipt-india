@@ -751,21 +751,21 @@ export default function FlowPage() {
 
         {/* ── For every ₹100 — detailed breakdown ── */}
         <section className="mt-14">
-          <p className="text-[10px] tracking-[0.2em] text-zinc-500 uppercase mb-1">For every ₹100 the government spends</p>
-          <p className="text-zinc-500 text-xs mb-10">FY 2026-27 Union Budget · ₹53.47 lakh crore total expenditure</p>
+          <p className="text-[10px] tracking-[0.2em] text-zinc-500 uppercase mb-2">For every ₹100 the government spends</p>
+          <p className="text-zinc-500 text-xs mb-8">FY 2026-27 Union Budget · ₹53.47 lakh crore total expenditure</p>
 
           <div className="space-y-12">
 
             {/* Interest */}
             <div>
-              <div className="flex items-baseline gap-5 mb-3">
-                <span className="text-5xl font-black text-zinc-100 tabular-nums leading-none w-16 shrink-0">₹26</span>
-                <div className="flex-1">
-                  <h3 className="text-zinc-100 font-semibold text-base">Interest payments</h3>
-                  <p className="text-zinc-500 text-xs font-mono tabular-nums mt-0.5">₹13.9 lakh crore</p>
+              <div className="flex items-start gap-5 mb-4">
+                <span className="text-5xl font-black text-zinc-100 tabular-nums leading-none w-16 shrink-0 pt-0.5">₹26</span>
+                <div className="flex-1 min-w-0">
+                  <h3 className="text-zinc-100 font-semibold text-base leading-tight">Interest payments</h3>
+                  <p className="text-zinc-500 text-xs font-mono tabular-nums mt-1 mb-3">₹13.9 lakh crore</p>
+                  <div className="h-[3px] bg-red-500/80 rounded-full" style={{ width: '100%' }} />
                 </div>
               </div>
-              <div className="h-[3px] bg-red-500/80 rounded-full mb-4" style={{ width: '100%' }} />
               <p className="text-zinc-400 text-sm leading-relaxed">
                 Servicing past borrowing — coupon payments on Government Securities (G-Secs), discounts on Treasury bills, and interest on external loans. Pure cash outflow with zero return on investment. India&apos;s public debt has been growing 9–10% year-on-year for the past decade.
               </p>
@@ -773,14 +773,14 @@ export default function FlowPage() {
 
             {/* Capex */}
             <div>
-              <div className="flex items-baseline gap-5 mb-3">
-                <span className="text-5xl font-black text-zinc-100 tabular-nums leading-none w-16 shrink-0">₹23</span>
-                <div className="flex-1">
-                  <h3 className="text-zinc-100 font-semibold text-base">Capital expenditure</h3>
-                  <p className="text-zinc-500 text-xs font-mono tabular-nums mt-0.5">₹12.2 lakh crore</p>
+              <div className="flex items-start gap-5 mb-4">
+                <span className="text-5xl font-black text-zinc-100 tabular-nums leading-none w-16 shrink-0 pt-0.5">₹23</span>
+                <div className="flex-1 min-w-0">
+                  <h3 className="text-zinc-100 font-semibold text-base leading-tight">Capital expenditure</h3>
+                  <p className="text-zinc-500 text-xs font-mono tabular-nums mt-1 mb-3">₹12.2 lakh crore</p>
+                  <div className="h-[3px] bg-sky-500/80 rounded-full" style={{ width: '88%' }} />
                 </div>
               </div>
-              <div className="h-[3px] bg-sky-500/80 rounded-full mb-4" style={{ width: '88%' }} />
               <p className="text-zinc-400 text-sm leading-relaxed mb-5">
                 Building physical assets that earn returns over time — roads, railways, ports, airports, defence kit. Unlike revenue spending, capex creates lasting infrastructure.
               </p>
@@ -795,14 +795,14 @@ export default function FlowPage() {
 
             {/* Schemes */}
             <div>
-              <div className="flex items-baseline gap-5 mb-3">
-                <span className="text-5xl font-black text-zinc-100 tabular-nums leading-none w-16 shrink-0">₹19</span>
-                <div className="flex-1">
-                  <h3 className="text-zinc-100 font-semibold text-base">Central schemes</h3>
-                  <p className="text-zinc-500 text-xs font-mono tabular-nums mt-0.5">₹9.9 lakh crore</p>
+              <div className="flex items-start gap-5 mb-4">
+                <span className="text-5xl font-black text-zinc-100 tabular-nums leading-none w-16 shrink-0 pt-0.5">₹19</span>
+                <div className="flex-1 min-w-0">
+                  <h3 className="text-zinc-100 font-semibold text-base leading-tight">Central schemes</h3>
+                  <p className="text-zinc-500 text-xs font-mono tabular-nums mt-1 mb-3">₹9.9 lakh crore</p>
+                  <div className="h-[3px] bg-amber-500/80 rounded-full" style={{ width: '71%' }} />
                 </div>
               </div>
-              <div className="h-[3px] bg-amber-500/80 rounded-full mb-4" style={{ width: '71%' }} />
               <p className="text-zinc-400 text-sm leading-relaxed mb-5">
                 Welfare and development programmes — both Central Sector Schemes (run by the Centre alone) and Centrally Sponsored Schemes (run jointly with states). The scaffolding of India&apos;s social safety net.
               </p>
@@ -821,14 +821,14 @@ export default function FlowPage() {
 
             {/* Defence */}
             <div>
-              <div className="flex items-baseline gap-5 mb-3">
-                <span className="text-5xl font-black text-zinc-100 tabular-nums leading-none w-16 shrink-0">₹15</span>
-                <div className="flex-1">
-                  <h3 className="text-zinc-100 font-semibold text-base">Defence</h3>
-                  <p className="text-zinc-500 text-xs font-mono tabular-nums mt-0.5">₹7.85 lakh crore</p>
+              <div className="flex items-start gap-5 mb-4">
+                <span className="text-5xl font-black text-zinc-100 tabular-nums leading-none w-16 shrink-0 pt-0.5">₹15</span>
+                <div className="flex-1 min-w-0">
+                  <h3 className="text-zinc-100 font-semibold text-base leading-tight">Defence</h3>
+                  <p className="text-zinc-500 text-xs font-mono tabular-nums mt-1 mb-3">₹7.85 lakh crore</p>
+                  <div className="h-[3px] bg-zinc-400/80 rounded-full" style={{ width: '57%' }} />
                 </div>
               </div>
-              <div className="h-[3px] bg-zinc-400/80 rounded-full mb-4" style={{ width: '57%' }} />
               <p className="text-zinc-400 text-sm leading-relaxed mb-5">
                 India&apos;s single largest ministry by budget allocation. Covers the Army, Navy, Air Force, Coast Guard, defence R&amp;D (DRDO), and the ordnance factory ecosystem.
               </p>
@@ -842,14 +842,14 @@ export default function FlowPage() {
 
             {/* Subsidies */}
             <div>
-              <div className="flex items-baseline gap-5 mb-3">
-                <span className="text-5xl font-black text-zinc-100 tabular-nums leading-none w-16 shrink-0">₹9</span>
-                <div className="flex-1">
-                  <h3 className="text-zinc-100 font-semibold text-base">Subsidies</h3>
-                  <p className="text-zinc-500 text-xs font-mono tabular-nums mt-0.5">₹4.55 lakh crore</p>
+              <div className="flex items-start gap-5 mb-4">
+                <span className="text-5xl font-black text-zinc-100 tabular-nums leading-none w-16 shrink-0 pt-0.5">₹9</span>
+                <div className="flex-1 min-w-0">
+                  <h3 className="text-zinc-100 font-semibold text-base leading-tight">Subsidies</h3>
+                  <p className="text-zinc-500 text-xs font-mono tabular-nums mt-1 mb-3">₹4.55 lakh crore</p>
+                  <div className="h-[3px] bg-emerald-500/80 rounded-full" style={{ width: '33%' }} />
                 </div>
               </div>
-              <div className="h-[3px] bg-emerald-500/80 rounded-full mb-4" style={{ width: '33%' }} />
               <p className="text-zinc-400 text-sm leading-relaxed mb-5">
                 Direct transfers that keep essentials affordable for the poor. The food subsidy funds the Public Distribution System (PDS), which delivers ration grain to <span className="text-zinc-200">81 crore Indians</span>.
               </p>
@@ -863,14 +863,14 @@ export default function FlowPage() {
 
             {/* Pensions */}
             <div>
-              <div className="flex items-baseline gap-5 mb-3">
-                <span className="text-5xl font-black text-zinc-100 tabular-nums leading-none w-16 shrink-0">₹6</span>
-                <div className="flex-1">
-                  <h3 className="text-zinc-100 font-semibold text-base">Government pensions</h3>
-                  <p className="text-zinc-500 text-xs font-mono tabular-nums mt-0.5">₹2.96 lakh crore</p>
+              <div className="flex items-start gap-5 mb-4">
+                <span className="text-5xl font-black text-zinc-100 tabular-nums leading-none w-16 shrink-0 pt-0.5">₹6</span>
+                <div className="flex-1 min-w-0">
+                  <h3 className="text-zinc-100 font-semibold text-base leading-tight">Government pensions</h3>
+                  <p className="text-zinc-500 text-xs font-mono tabular-nums mt-1 mb-3">₹2.96 lakh crore</p>
+                  <div className="h-[3px] bg-purple-400/80 rounded-full" style={{ width: '21%' }} />
                 </div>
               </div>
-              <div className="h-[3px] bg-purple-400/80 rounded-full mb-4" style={{ width: '21%' }} />
               <p className="text-zinc-400 text-sm leading-relaxed">
                 Pensions paid to retired civil servants, central armed police forces, and railway employees. (Defence pensions sit under the Defence head above.) Excludes the National Pension System, which is contributory and funded by employees themselves.
               </p>
@@ -878,14 +878,14 @@ export default function FlowPage() {
 
             {/* Other */}
             <div>
-              <div className="flex items-baseline gap-5 mb-3">
-                <span className="text-5xl font-black text-zinc-100 tabular-nums leading-none w-16 shrink-0">₹4</span>
-                <div className="flex-1">
-                  <h3 className="text-zinc-100 font-semibold text-base">Other</h3>
-                  <p className="text-zinc-500 text-xs font-mono tabular-nums mt-0.5">₹2.12 lakh crore</p>
+              <div className="flex items-start gap-5 mb-4">
+                <span className="text-5xl font-black text-zinc-100 tabular-nums leading-none w-16 shrink-0 pt-0.5">₹4</span>
+                <div className="flex-1 min-w-0">
+                  <h3 className="text-zinc-100 font-semibold text-base leading-tight">Other</h3>
+                  <p className="text-zinc-500 text-xs font-mono tabular-nums mt-1 mb-3">₹2.12 lakh crore</p>
+                  <div className="h-[3px] bg-zinc-600 rounded-full" style={{ width: '15%' }} />
                 </div>
               </div>
-              <div className="h-[3px] bg-zinc-600 rounded-full mb-4" style={{ width: '15%' }} />
               <p className="text-zinc-400 text-sm leading-relaxed mb-5">
                 The residual head — everything that doesn&apos;t fit the categories above. Mostly small, slow-moving line items spread across departments:
               </p>
