@@ -759,7 +759,7 @@ export default function FlowPage() {
             {/* Interest */}
             <div>
               <div className="flex items-start gap-5 mb-4">
-                <span className="text-5xl font-black text-zinc-100 tabular-nums leading-none w-16 shrink-0 pt-0.5">₹26</span>
+                <span className="text-5xl font-black text-zinc-100 tabular-nums leading-none w-20 shrink-0 pt-0.5">₹26</span>
                 <div className="flex-1 min-w-0">
                   <h3 className="text-zinc-100 font-semibold text-base leading-tight">Interest payments</h3>
                   <p className="text-zinc-500 text-xs font-mono tabular-nums mt-1 mb-3">₹13.9 lakh crore</p>
@@ -774,7 +774,7 @@ export default function FlowPage() {
             {/* Capex */}
             <div>
               <div className="flex items-start gap-5 mb-4">
-                <span className="text-5xl font-black text-zinc-100 tabular-nums leading-none w-16 shrink-0 pt-0.5">₹23</span>
+                <span className="text-5xl font-black text-zinc-100 tabular-nums leading-none w-20 shrink-0 pt-0.5">₹23</span>
                 <div className="flex-1 min-w-0">
                   <h3 className="text-zinc-100 font-semibold text-base leading-tight">Capital expenditure</h3>
                   <p className="text-zinc-500 text-xs font-mono tabular-nums mt-1 mb-3">₹12.2 lakh crore</p>
@@ -796,7 +796,7 @@ export default function FlowPage() {
             {/* Schemes */}
             <div>
               <div className="flex items-start gap-5 mb-4">
-                <span className="text-5xl font-black text-zinc-100 tabular-nums leading-none w-16 shrink-0 pt-0.5">₹19</span>
+                <span className="text-5xl font-black text-zinc-100 tabular-nums leading-none w-20 shrink-0 pt-0.5">₹19</span>
                 <div className="flex-1 min-w-0">
                   <h3 className="text-zinc-100 font-semibold text-base leading-tight">Central schemes</h3>
                   <p className="text-zinc-500 text-xs font-mono tabular-nums mt-1 mb-3">₹9.9 lakh crore</p>
@@ -822,7 +822,7 @@ export default function FlowPage() {
             {/* Defence */}
             <div>
               <div className="flex items-start gap-5 mb-4">
-                <span className="text-5xl font-black text-zinc-100 tabular-nums leading-none w-16 shrink-0 pt-0.5">₹15</span>
+                <span className="text-5xl font-black text-zinc-100 tabular-nums leading-none w-20 shrink-0 pt-0.5">₹15</span>
                 <div className="flex-1 min-w-0">
                   <h3 className="text-zinc-100 font-semibold text-base leading-tight">Defence</h3>
                   <p className="text-zinc-500 text-xs font-mono tabular-nums mt-1 mb-3">₹7.85 lakh crore</p>
@@ -843,7 +843,7 @@ export default function FlowPage() {
             {/* Subsidies */}
             <div>
               <div className="flex items-start gap-5 mb-4">
-                <span className="text-5xl font-black text-zinc-100 tabular-nums leading-none w-16 shrink-0 pt-0.5">₹9</span>
+                <span className="text-5xl font-black text-zinc-100 tabular-nums leading-none w-20 shrink-0 pt-0.5">₹9</span>
                 <div className="flex-1 min-w-0">
                   <h3 className="text-zinc-100 font-semibold text-base leading-tight">Subsidies</h3>
                   <p className="text-zinc-500 text-xs font-mono tabular-nums mt-1 mb-3">₹4.55 lakh crore</p>
@@ -864,7 +864,7 @@ export default function FlowPage() {
             {/* Pensions */}
             <div>
               <div className="flex items-start gap-5 mb-4">
-                <span className="text-5xl font-black text-zinc-100 tabular-nums leading-none w-16 shrink-0 pt-0.5">₹6</span>
+                <span className="text-5xl font-black text-zinc-100 tabular-nums leading-none w-20 shrink-0 pt-0.5">₹6</span>
                 <div className="flex-1 min-w-0">
                   <h3 className="text-zinc-100 font-semibold text-base leading-tight">Government pensions</h3>
                   <p className="text-zinc-500 text-xs font-mono tabular-nums mt-1 mb-3">₹2.96 lakh crore</p>
@@ -879,7 +879,7 @@ export default function FlowPage() {
             {/* Other */}
             <div>
               <div className="flex items-start gap-5 mb-4">
-                <span className="text-5xl font-black text-zinc-100 tabular-nums leading-none w-16 shrink-0 pt-0.5">₹4</span>
+                <span className="text-5xl font-black text-zinc-100 tabular-nums leading-none w-20 shrink-0 pt-0.5">₹4</span>
                 <div className="flex-1 min-w-0">
                   <h3 className="text-zinc-100 font-semibold text-base leading-tight">Other</h3>
                   <p className="text-zinc-500 text-xs font-mono tabular-nums mt-1 mb-3">₹2.12 lakh crore</p>
