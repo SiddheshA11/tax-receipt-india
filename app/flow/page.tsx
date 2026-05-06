@@ -654,167 +654,275 @@ export default function FlowPage() {
           })}
         </div>
 
-        {/* ── Your money, personalised ── */}
-        <section className="mt-12">
-          <p className="text-xs tracking-widest text-zinc-500 uppercase mb-5">Your money, decoded</p>
+        {/* ── Your money, decoded ── */}
+        <section className="mt-14">
+          <p className="text-[10px] tracking-[0.2em] text-zinc-500 uppercase mb-6">Your money, decoded</p>
 
-          {/* Hero card: working days */}
-          <div className="rounded-2xl bg-gradient-to-br from-red-950/60 via-red-950/20 to-transparent border border-red-900/50 px-6 py-6 mb-3">
-            <p className="text-red-400 text-xs font-semibold uppercase tracking-widest mb-4">You worked this many days just to service old government debt</p>
+          <div className="mb-10">
+            <p className="text-zinc-400 text-sm mb-4">You worked this many days just to service old government debt:</p>
             <div className="flex items-end gap-3 mb-3">
-              <span className="text-7xl font-black text-red-100 leading-none">
+              <span className="text-7xl sm:text-8xl font-black text-zinc-100 tabular-nums leading-none">
                 {(Math.round((breakdown.totalTax.mid * 0.26) / (breakdown.grossIncome / 250) * 10) / 10).toFixed(1)}
               </span>
-              <span className="text-2xl font-semibold text-red-400 pb-1">days</span>
+              <span className="text-2xl font-semibold text-zinc-500 pb-2">days</span>
             </div>
-            <p className="text-zinc-400 text-sm">
-              Your {fmtINR(Math.round(breakdown.totalTax.mid * 0.26))} debt interest share ÷ your daily income of {fmtINR(Math.round(breakdown.grossIncome / 250))}
+            <p className="text-zinc-600 text-xs font-mono">
+              {fmtINR(Math.round(breakdown.totalTax.mid * 0.26))} debt interest share ÷ {fmtINR(Math.round(breakdown.grossIncome / 250))} earned per working day
             </p>
           </div>
 
-          <div className="grid grid-cols-2 gap-3">
-            <div className="rounded-xl border border-zinc-800 bg-zinc-900/60 px-4 py-4">
-              <p className="text-zinc-500 text-xs uppercase tracking-wide mb-2">Your interest share</p>
-              <p className="text-2xl font-black text-red-300 leading-none">{fmtINR(Math.round(breakdown.totalTax.mid * 0.26))}</p>
-              <p className="text-zinc-600 text-xs mt-1.5">of your total tax paid</p>
+          <div className="grid grid-cols-2 gap-6 border-t border-zinc-800 pt-7">
+            <div>
+              <p className="text-zinc-500 text-[10px] uppercase tracking-[0.18em] mb-3">Your interest share</p>
+              <p className="text-3xl font-black text-zinc-100 tabular-nums leading-none">{fmtINR(Math.round(breakdown.totalTax.mid * 0.26))}</p>
+              <p className="text-zinc-600 text-xs mt-2">of your total tax paid</p>
             </div>
-            <div className="rounded-xl border border-zinc-800 bg-zinc-900/60 px-4 py-4">
-              <p className="text-zinc-500 text-xs uppercase tracking-wide mb-2">Share going to debt</p>
-              <p className="text-2xl font-black text-amber-400 leading-none">26%</p>
-              <p className="text-zinc-600 text-xs mt-1.5">of every rupee collected</p>
+            <div>
+              <p className="text-zinc-500 text-[10px] uppercase tracking-[0.18em] mb-3">Share to debt</p>
+              <p className="text-3xl font-black text-zinc-100 tabular-nums leading-none">26%</p>
+              <p className="text-zinc-600 text-xs mt-2">of every rupee collected</p>
             </div>
           </div>
         </section>
 
-        {/* ── National scale ── */}
-        <section className="mt-10">
-          <p className="text-xs tracking-widest text-zinc-500 uppercase mb-5">The national scale</p>
-          <div className="space-y-2.5">
+        {/* ── The national scale ── */}
+        <section className="mt-14">
+          <p className="text-[10px] tracking-[0.2em] text-zinc-500 uppercase mb-6">The national scale</p>
+          <div className="divide-y divide-zinc-800/80 border-y border-zinc-800/80">
 
-            <div className="rounded-xl border border-red-900/30 bg-gradient-to-r from-red-950/30 to-transparent p-4 flex items-start gap-4">
-              <div className="shrink-0 mt-0.5 w-10 h-10 rounded-full bg-red-950/60 border border-red-900/40 flex items-center justify-center">
-                <svg className="w-4 h-4 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                  <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
-                </svg>
+            <div className="py-7">
+              <div className="flex items-baseline gap-3 mb-2 flex-wrap">
+                <span className="text-3xl sm:text-4xl font-black text-zinc-100 tabular-nums leading-none">₹4.4 lakh</span>
+                <span className="text-zinc-500 text-sm">per second on debt interest</span>
               </div>
-              <div>
-                <p className="text-zinc-100 text-sm font-bold mb-0.5">₹44,000 per second, non-stop</p>
-                <p className="text-zinc-500 text-xs leading-relaxed">India spends ₹44,083 every single second — day and night, 365 days a year — just on debt interest. That&apos;s ₹2.64 crore per minute, ₹158 crore per hour.</p>
-              </div>
+              <p className="text-zinc-400 text-sm leading-relaxed">
+                That&apos;s ₹2.64 crore every minute, ₹158 crore every hour, ₹3,810 crore every day — non-stop, 365 days a year. In a single day, India pays as much in interest as <span className="text-zinc-200">six Chandrayaan-3 missions</span> cost combined (₹615 Cr each).
+              </p>
             </div>
 
-            <div className="rounded-xl border border-zinc-800 bg-zinc-900/40 p-4 flex items-start gap-4">
-              <div className="shrink-0 mt-0.5 w-10 h-10 rounded-full bg-zinc-800/80 flex items-center justify-center">
-                <svg className="w-4 h-4 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-                </svg>
+            <div className="py-7">
+              <div className="flex items-baseline gap-3 mb-2 flex-wrap">
+                <span className="text-3xl sm:text-4xl font-black text-zinc-100 tabular-nums leading-none">₹1.57 lakh</span>
+                <span className="text-zinc-500 text-sm">owed by every Indian — newborns included</span>
               </div>
-              <div>
-                <p className="text-zinc-100 text-sm font-bold mb-0.5">₹1.17 lakh owed per citizen</p>
-                <p className="text-zinc-500 text-xs leading-relaxed">Every Indian — including newborns — owes ₹1.17 lakh to the central government&apos;s debt (55.6% debt-to-GDP). A family of four owes ₹4.68 lakh before they spend a single rupee.</p>
-              </div>
+              <p className="text-zinc-400 text-sm leading-relaxed">
+                At 55.6% debt-to-GDP, central government liabilities sit around ₹219 lakh crore. Spread across 1.4 billion people, every Indian carries ₹1.57 lakh of national debt — a <span className="text-zinc-200">family of four owes ₹6.27 lakh</span>, before any state debt is added.
+              </p>
             </div>
 
-            <div className="rounded-xl border border-zinc-800 bg-zinc-900/40 p-4 flex items-start gap-4">
-              <div className="shrink-0 mt-0.5 w-10 h-10 rounded-full bg-zinc-800/80 flex items-center justify-center">
-                <svg className="w-4 h-4 text-zinc-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                  <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/>
-                </svg>
-              </div>
-              <div>
-                <p className="text-zinc-100 text-sm font-bold mb-0.5">Interest beats Defence + Education + Health combined</p>
-                <p className="text-zinc-500 text-xs leading-relaxed">₹13.9L Cr in interest &gt; defence (₹7.85L Cr) + education (₹1.1L Cr) + health (₹0.9L Cr) = ₹9.85L Cr. India pays more to creditors than to its army, schools, and hospitals — together.</p>
-              </div>
+            <div className="py-7">
+              <p className="text-3xl sm:text-4xl font-black text-zinc-100 leading-none mb-2">Interest &gt; Defence + Education + Health</p>
+              <p className="text-zinc-400 text-sm leading-relaxed">
+                ₹13.9L Cr in interest beats Defence (₹7.85L Cr) + Education (₹1.10L Cr) + Health (₹0.90L Cr) = ₹9.85L Cr — by 41%. India pays creditors more than it pays its army, schools, and hospitals combined.
+              </p>
             </div>
 
-            <div className="rounded-xl border border-zinc-800 bg-zinc-900/40 p-4 flex items-start gap-4">
-              <div className="shrink-0 mt-0.5 w-10 h-10 rounded-full bg-zinc-800/80 flex items-center justify-center">
-                <svg className="w-4 h-4 text-zinc-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                  <rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
-                </svg>
+            <div className="py-7">
+              <div className="flex items-baseline gap-3 mb-2 flex-wrap">
+                <span className="text-3xl sm:text-4xl font-black text-zinc-100 tabular-nums leading-none">~6%</span>
+                <span className="text-zinc-500 text-sm">of Indians file income tax returns</span>
               </div>
-              <div>
-                <p className="text-zinc-100 text-sm font-bold mb-0.5">Only 85 million of 1.4 billion pay income tax</p>
-                <p className="text-zinc-500 text-xs leading-relaxed">Just 6% of Indians file income tax returns. The formal salaried workforce — people like you — effectively cross-subsidises the entire welfare system for the other 94%.</p>
-              </div>
+              <p className="text-zinc-400 text-sm leading-relaxed">
+                Roughly 8.5 crore people file ITRs out of 1.4 billion. Of those, only ~2 crore actually pay positive income tax. The formal salaried class — people like you — effectively cross-subsidises the welfare system for everyone else.
+              </p>
             </div>
 
-            <div className="rounded-xl border border-zinc-800 bg-zinc-900/40 p-4 flex items-start gap-4">
-              <div className="shrink-0 mt-0.5 w-10 h-10 rounded-full bg-zinc-800/80 flex items-center justify-center">
-                <svg className="w-4 h-4 text-zinc-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                </svg>
+            <div className="py-7">
+              <div className="flex items-baseline gap-3 mb-2 flex-wrap">
+                <span className="text-3xl sm:text-4xl font-black text-zinc-100 tabular-nums leading-none">65%</span>
+                <span className="text-zinc-500 text-sm">of revenue is committed before any welfare</span>
               </div>
-              <div>
-                <p className="text-zinc-100 text-sm font-bold mb-0.5">65 paise of every ₹1 of revenue is pre-committed</p>
-                <p className="text-zinc-500 text-xs leading-relaxed">Interest + defence salaries + pensions absorb 65% of all revenue receipts before the government can spend a single rupee on schools, roads, or hospitals.</p>
-              </div>
+              <p className="text-zinc-400 text-sm leading-relaxed">
+                Interest + defence salaries + government pensions absorb 65 paise of every ₹1 of revenue receipts before the government can fund a single school, road, or hospital.
+              </p>
             </div>
 
-            <div className="rounded-xl border border-amber-900/20 bg-gradient-to-r from-amber-950/20 to-transparent p-4 flex items-start gap-4">
-              <div className="shrink-0 mt-0.5 w-10 h-10 rounded-full bg-amber-950/40 border border-amber-900/30 flex items-center justify-center">
-                <svg className="w-4 h-4 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                  <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-                </svg>
+            <div className="py-7">
+              <div className="flex items-baseline gap-3 mb-2 flex-wrap">
+                <span className="text-3xl sm:text-4xl font-black text-zinc-100 tabular-nums leading-none">79 years</span>
+                <span className="text-zinc-500 text-sm">of unbroken fiscal deficits</span>
               </div>
-              <div>
-                <p className="text-zinc-100 text-sm font-bold mb-0.5">India has run a deficit every year since 1947</p>
-                <p className="text-zinc-500 text-xs leading-relaxed">The FY 2026-27 fiscal deficit is 4.3% of GDP. India has never once balanced its books since independence — meaning the debt pile, and the interest on it, only compounds year after year.</p>
-              </div>
+              <p className="text-zinc-400 text-sm leading-relaxed">
+                India has not run a fiscal surplus in any year since 1947. The FY 2026-27 deficit is 4.3% of GDP — meaning the debt pile, and the interest bill on it, only compound year after year.
+              </p>
             </div>
-
           </div>
         </section>
 
-        {/* ── For every ₹100 ── */}
-        <section className="mt-10">
-          <p className="text-xs tracking-widest text-zinc-500 uppercase mb-1">For every ₹100 the government spends</p>
-          <p className="text-zinc-500 text-xs mb-6">FY 2026-27 Union Budget allocation</p>
-          <div className="space-y-5">
-            {([
-              { label: "Interest payments", pct: 26.0, amount: "₹13.9L Cr", note: "Paying creditors for past borrowing", bar: "bg-red-500", text: "text-red-400" },
-              { label: "Capital expenditure", pct: 22.8, amount: "₹12.2L Cr", note: "Roads, railways, airports, defence hardware", bar: "bg-sky-500", text: "text-sky-400" },
-              { label: "Central schemes", pct: 18.5, amount: "₹9.9L Cr", note: "MGNREGS, PM Awas Yojana, Jal Jeevan Mission, PMGSY", bar: "bg-amber-500", text: "text-amber-400" },
-              { label: "Defence", pct: 14.7, amount: "₹7.85L Cr", note: "India's single largest ministry by budget", bar: "bg-zinc-400", text: "text-zinc-300" },
-              { label: "Subsidies", pct: 8.5, amount: "₹4.55L Cr", note: "87% goes to food (PDS) and fertilizer", bar: "bg-emerald-500", text: "text-emerald-400" },
-              { label: "Govt pensions", pct: 5.5, amount: "₹2.96L Cr", note: "Civil service, defence, railways", bar: "bg-purple-400", text: "text-purple-300" },
-              { label: "Other", pct: 4.0, amount: "₹2.12L Cr", note: "Residual expenditure", bar: "bg-zinc-600", text: "text-zinc-400" },
-            ] as { label: string; pct: number; amount: string; note: string; bar: string; text: string }[]).map(({ label, pct, amount, note, bar, text }) => (
-              <div key={label} className="flex gap-4 items-start">
-                <div className="shrink-0 w-12 text-right pt-0.5">
-                  <span className={`text-3xl font-black ${text} leading-none tabular-nums`}>₹{Math.round(pct)}</span>
-                </div>
+        {/* ── For every ₹100 — detailed breakdown ── */}
+        <section className="mt-14">
+          <p className="text-[10px] tracking-[0.2em] text-zinc-500 uppercase mb-1">For every ₹100 the government spends</p>
+          <p className="text-zinc-500 text-xs mb-10">FY 2026-27 Union Budget · ₹53.47 lakh crore total expenditure</p>
+
+          <div className="space-y-12">
+
+            {/* Interest */}
+            <div>
+              <div className="flex items-baseline gap-5 mb-3">
+                <span className="text-5xl font-black text-zinc-100 tabular-nums leading-none w-16 shrink-0">₹26</span>
                 <div className="flex-1">
-                  <div className="flex items-baseline gap-2 mb-1.5">
-                    <span className="text-zinc-100 text-sm font-semibold">{label}</span>
-                    <span className="text-zinc-600 text-xs shrink-0">{amount}</span>
-                  </div>
-                  <div className="h-2 rounded-full bg-zinc-800 mb-1.5 overflow-hidden">
-                    <div className={`h-full rounded-full ${bar}`} style={{ width: `${(pct / 26) * 100}%` }} />
-                  </div>
-                  <p className="text-zinc-600 text-xs leading-snug">{note}</p>
+                  <h3 className="text-zinc-100 font-semibold text-base">Interest payments</h3>
+                  <p className="text-zinc-500 text-xs font-mono tabular-nums mt-0.5">₹13.9 lakh crore</p>
                 </div>
               </div>
-            ))}
+              <div className="h-[3px] bg-red-500/80 rounded-full mb-4" style={{ width: '100%' }} />
+              <p className="text-zinc-400 text-sm leading-relaxed">
+                Servicing past borrowing — coupon payments on Government Securities (G-Secs), discounts on Treasury bills, and interest on external loans. Pure cash outflow with zero return on investment. India&apos;s public debt has been growing 9–10% year-on-year for the past decade.
+              </p>
+            </div>
+
+            {/* Capex */}
+            <div>
+              <div className="flex items-baseline gap-5 mb-3">
+                <span className="text-5xl font-black text-zinc-100 tabular-nums leading-none w-16 shrink-0">₹23</span>
+                <div className="flex-1">
+                  <h3 className="text-zinc-100 font-semibold text-base">Capital expenditure</h3>
+                  <p className="text-zinc-500 text-xs font-mono tabular-nums mt-0.5">₹12.2 lakh crore</p>
+                </div>
+              </div>
+              <div className="h-[3px] bg-sky-500/80 rounded-full mb-4" style={{ width: '88%' }} />
+              <p className="text-zinc-400 text-sm leading-relaxed mb-5">
+                Building physical assets that earn returns over time — roads, railways, ports, airports, defence kit. Unlike revenue spending, capex creates lasting infrastructure.
+              </p>
+              <ul className="space-y-2.5 text-xs pl-4 border-l border-zinc-800">
+                <li className="flex justify-between gap-3"><span className="text-zinc-300">Roads &amp; highways <span className="text-zinc-600">(NHAI, MoRTH)</span></span><span className="font-mono tabular-nums text-zinc-500 shrink-0">₹2.87L Cr</span></li>
+                <li className="flex justify-between gap-3"><span className="text-zinc-300">Railways <span className="text-zinc-600">(IR capex)</span></span><span className="font-mono tabular-nums text-zinc-500 shrink-0">₹2.65L Cr</span></li>
+                <li className="flex justify-between gap-3"><span className="text-zinc-300">Defence modernisation</span><span className="font-mono tabular-nums text-zinc-500 shrink-0">₹1.81L Cr</span></li>
+                <li className="flex justify-between gap-3"><span className="text-zinc-300">Loans to states for capex</span><span className="font-mono tabular-nums text-zinc-500 shrink-0">₹1.60L Cr</span></li>
+                <li className="flex justify-between gap-3"><span className="text-zinc-300">Telecom, urban housing, ports, other</span><span className="font-mono tabular-nums text-zinc-500 shrink-0">₹3.27L Cr</span></li>
+              </ul>
+            </div>
+
+            {/* Schemes */}
+            <div>
+              <div className="flex items-baseline gap-5 mb-3">
+                <span className="text-5xl font-black text-zinc-100 tabular-nums leading-none w-16 shrink-0">₹19</span>
+                <div className="flex-1">
+                  <h3 className="text-zinc-100 font-semibold text-base">Central schemes</h3>
+                  <p className="text-zinc-500 text-xs font-mono tabular-nums mt-0.5">₹9.9 lakh crore</p>
+                </div>
+              </div>
+              <div className="h-[3px] bg-amber-500/80 rounded-full mb-4" style={{ width: '71%' }} />
+              <p className="text-zinc-400 text-sm leading-relaxed mb-5">
+                Welfare and development programmes — both Central Sector Schemes (run by the Centre alone) and Centrally Sponsored Schemes (run jointly with states). The scaffolding of India&apos;s social safety net.
+              </p>
+              <ul className="space-y-2.5 text-xs pl-4 border-l border-zinc-800">
+                <li className="flex justify-between gap-3"><span className="text-zinc-300">MGNREGS <span className="text-zinc-600">— rural employment guarantee</span></span><span className="font-mono tabular-nums text-zinc-500 shrink-0">₹86,000 Cr</span></li>
+                <li className="flex justify-between gap-3"><span className="text-zinc-300">PM Awas Yojana <span className="text-zinc-600">— housing for poor</span></span><span className="font-mono tabular-nums text-zinc-500 shrink-0">₹85,000 Cr</span></li>
+                <li className="flex justify-between gap-3"><span className="text-zinc-300">Jal Jeevan Mission <span className="text-zinc-600">— rural tap water</span></span><span className="font-mono tabular-nums text-zinc-500 shrink-0">₹70,000 Cr</span></li>
+                <li className="flex justify-between gap-3"><span className="text-zinc-300">PM-KISAN <span className="text-zinc-600">— farmer income support</span></span><span className="font-mono tabular-nums text-zinc-500 shrink-0">₹60,000 Cr</span></li>
+                <li className="flex justify-between gap-3"><span className="text-zinc-300">Samagra Shiksha <span className="text-zinc-600">— school education</span></span><span className="font-mono tabular-nums text-zinc-500 shrink-0">₹38,000 Cr</span></li>
+                <li className="flex justify-between gap-3"><span className="text-zinc-300">National Health Mission</span><span className="font-mono tabular-nums text-zinc-500 shrink-0">₹37,000 Cr</span></li>
+                <li className="flex justify-between gap-3"><span className="text-zinc-300">Saksham Anganwadi &amp; POSHAN 2.0</span><span className="font-mono tabular-nums text-zinc-500 shrink-0">₹22,000 Cr</span></li>
+                <li className="flex justify-between gap-3"><span className="text-zinc-300">PM POSHAN <span className="text-zinc-600">— mid-day meal</span></span><span className="font-mono tabular-nums text-zinc-500 shrink-0">₹13,000 Cr</span></li>
+                <li className="flex justify-between gap-3"><span className="text-zinc-400">Other schemes <span className="text-zinc-600">(PMGSY, Swachh Bharat, dozens more)</span></span><span className="font-mono tabular-nums text-zinc-500 shrink-0">₹4.79L Cr</span></li>
+              </ul>
+            </div>
+
+            {/* Defence */}
+            <div>
+              <div className="flex items-baseline gap-5 mb-3">
+                <span className="text-5xl font-black text-zinc-100 tabular-nums leading-none w-16 shrink-0">₹15</span>
+                <div className="flex-1">
+                  <h3 className="text-zinc-100 font-semibold text-base">Defence</h3>
+                  <p className="text-zinc-500 text-xs font-mono tabular-nums mt-0.5">₹7.85 lakh crore</p>
+                </div>
+              </div>
+              <div className="h-[3px] bg-zinc-400/80 rounded-full mb-4" style={{ width: '57%' }} />
+              <p className="text-zinc-400 text-sm leading-relaxed mb-5">
+                India&apos;s single largest ministry by budget allocation. Covers the Army, Navy, Air Force, Coast Guard, defence R&amp;D (DRDO), and the ordnance factory ecosystem.
+              </p>
+              <ul className="space-y-2.5 text-xs pl-4 border-l border-zinc-800">
+                <li className="flex justify-between gap-3"><span className="text-zinc-300">Pay &amp; allowances <span className="text-zinc-600">(revenue)</span></span><span className="font-mono tabular-nums text-zinc-500 shrink-0">₹2.70L Cr</span></li>
+                <li className="flex justify-between gap-3"><span className="text-zinc-300">Defence pensions</span><span className="font-mono tabular-nums text-zinc-500 shrink-0">₹1.41L Cr</span></li>
+                <li className="flex justify-between gap-3"><span className="text-zinc-300">Capital outlay <span className="text-zinc-600">(modernisation)</span></span><span className="font-mono tabular-nums text-zinc-500 shrink-0">₹1.81L Cr</span></li>
+                <li className="flex justify-between gap-3"><span className="text-zinc-300">Stores, equipment, civil expenditure</span><span className="font-mono tabular-nums text-zinc-500 shrink-0">₹1.93L Cr</span></li>
+              </ul>
+            </div>
+
+            {/* Subsidies */}
+            <div>
+              <div className="flex items-baseline gap-5 mb-3">
+                <span className="text-5xl font-black text-zinc-100 tabular-nums leading-none w-16 shrink-0">₹9</span>
+                <div className="flex-1">
+                  <h3 className="text-zinc-100 font-semibold text-base">Subsidies</h3>
+                  <p className="text-zinc-500 text-xs font-mono tabular-nums mt-0.5">₹4.55 lakh crore</p>
+                </div>
+              </div>
+              <div className="h-[3px] bg-emerald-500/80 rounded-full mb-4" style={{ width: '33%' }} />
+              <p className="text-zinc-400 text-sm leading-relaxed mb-5">
+                Direct transfers that keep essentials affordable for the poor. The food subsidy funds the Public Distribution System (PDS), which delivers ration grain to <span className="text-zinc-200">81 crore Indians</span>.
+              </p>
+              <ul className="space-y-2.5 text-xs pl-4 border-l border-zinc-800">
+                <li className="flex justify-between gap-3"><span className="text-zinc-300">Food subsidy <span className="text-zinc-600">(PDS, NFSA)</span></span><span className="font-mono tabular-nums text-zinc-500 shrink-0">₹2.28L Cr · 50%</span></li>
+                <li className="flex justify-between gap-3"><span className="text-zinc-300">Fertilizer subsidy</span><span className="font-mono tabular-nums text-zinc-500 shrink-0">₹1.71L Cr · 38%</span></li>
+                <li className="flex justify-between gap-3"><span className="text-zinc-300">Other subsidies <span className="text-zinc-600">(interest equalisation, exports, etc.)</span></span><span className="font-mono tabular-nums text-zinc-500 shrink-0">₹0.45L Cr · 10%</span></li>
+                <li className="flex justify-between gap-3"><span className="text-zinc-300">LPG subsidy <span className="text-zinc-600">(PMUY)</span></span><span className="font-mono tabular-nums text-zinc-500 shrink-0">₹12,000 Cr · 3%</span></li>
+              </ul>
+            </div>
+
+            {/* Pensions */}
+            <div>
+              <div className="flex items-baseline gap-5 mb-3">
+                <span className="text-5xl font-black text-zinc-100 tabular-nums leading-none w-16 shrink-0">₹6</span>
+                <div className="flex-1">
+                  <h3 className="text-zinc-100 font-semibold text-base">Government pensions</h3>
+                  <p className="text-zinc-500 text-xs font-mono tabular-nums mt-0.5">₹2.96 lakh crore</p>
+                </div>
+              </div>
+              <div className="h-[3px] bg-purple-400/80 rounded-full mb-4" style={{ width: '21%' }} />
+              <p className="text-zinc-400 text-sm leading-relaxed">
+                Pensions paid to retired civil servants, central armed police forces, and railway employees. (Defence pensions sit under the Defence head above.) Excludes the National Pension System, which is contributory and funded by employees themselves.
+              </p>
+            </div>
+
+            {/* Other */}
+            <div>
+              <div className="flex items-baseline gap-5 mb-3">
+                <span className="text-5xl font-black text-zinc-100 tabular-nums leading-none w-16 shrink-0">₹4</span>
+                <div className="flex-1">
+                  <h3 className="text-zinc-100 font-semibold text-base">Other</h3>
+                  <p className="text-zinc-500 text-xs font-mono tabular-nums mt-0.5">₹2.12 lakh crore</p>
+                </div>
+              </div>
+              <div className="h-[3px] bg-zinc-600 rounded-full mb-4" style={{ width: '15%' }} />
+              <p className="text-zinc-400 text-sm leading-relaxed mb-5">
+                The residual head — everything that doesn&apos;t fit the categories above. Mostly small, slow-moving line items spread across departments:
+              </p>
+              <ul className="space-y-2 text-xs pl-4 border-l border-zinc-800 text-zinc-400">
+                <li>Statutory transfers to states (Finance Commission grants)</li>
+                <li>Postal services and telecom departmental costs</li>
+                <li>Tax administration (CBDT, CBIC operating costs)</li>
+                <li>Audit, accounts, contingency, and reserve funds</li>
+                <li>Smaller departmental establishments</li>
+              </ul>
+            </div>
+
           </div>
-          <p className="text-zinc-700 text-xs mt-6 pt-4 border-t border-zinc-800/60">Source: Union Budget 2026-27 · PRS India Budget Analysis Feb 2026</p>
+
+          <p className="text-zinc-700 text-[11px] mt-12 pt-6 border-t border-zinc-800/80 leading-relaxed">
+            Sources: Union Budget 2026-27 · PRS India Budget Analysis · Demand for Grants. Note: Defence&apos;s ₹1.81L Cr capital outlay overlaps with the capex line above; figures follow the standard PRS expenditure-head classification. Education (~₹1.10L Cr) and Health (~₹0.90L Cr) appear primarily within Schemes via Samagra Shiksha and the National Health Mission.
+          </p>
         </section>
 
         {/* ── India vs the world ── */}
-        <section className="mt-10">
-          <p className="text-xs tracking-widest text-zinc-500 uppercase mb-2">India vs the world</p>
-          <p className="text-zinc-100 text-base font-semibold mb-1">Low tax. High debt interest. The worst of both worlds.</p>
-          <p className="text-zinc-500 text-sm mb-7 leading-relaxed">India ranks near the bottom for tax revenue as a share of GDP — but near the top for the share of spending eaten by debt interest.</p>
+        <section className="mt-14">
+          <p className="text-[10px] tracking-[0.2em] text-zinc-500 uppercase mb-2">India vs the world</p>
+          <p className="text-zinc-100 text-lg font-semibold mb-1">Low tax. High debt interest.</p>
+          <p className="text-zinc-500 text-sm mb-9 leading-relaxed">
+            India sits near the bottom for tax revenue as a share of GDP — yet near the top for the share of spending eaten by debt interest.
+          </p>
 
-          <div className="grid sm:grid-cols-2 gap-8">
+          <div className="grid sm:grid-cols-2 gap-12">
             <div>
-              <p className="text-xs text-zinc-400 uppercase tracking-wide font-semibold mb-4">Tax revenue as % of GDP <span className="text-zinc-600 normal-case font-normal">(higher = more funded)</span></p>
-              <div className="space-y-3">
+              <p className="text-[10px] text-zinc-400 uppercase tracking-[0.18em] font-semibold mb-1">Tax revenue / GDP</p>
+              <p className="text-zinc-600 text-xs mb-6">Higher = stronger fiscal capacity</p>
+              <div className="space-y-3.5">
                 {([
                   { country: "France", flag: "🇫🇷", pct: 45.4 },
                   { country: "Germany", flag: "🇩🇪", pct: 39.3 },
                   { country: "UK", flag: "🇬🇧", pct: 35.3 },
-                  { country: "OECD avg", flag: "🌍", pct: 33.9 },
+                  { country: "OECD avg", flag: "—", pct: 33.9 },
                   { country: "Brazil", flag: "🇧🇷", pct: 31.4 },
                   { country: "USA", flag: "🇺🇸", pct: 27.1 },
                   { country: "South Africa", flag: "🇿🇦", pct: 26.6 },
@@ -823,30 +931,31 @@ export default function FlowPage() {
                   { country: "India", flag: "🇮🇳", pct: 11.4, hi: true },
                 ] as { country: string; flag: string; pct: number; hi?: boolean }[]).map(({ country, flag, pct, hi }) => (
                   <div key={country} className="flex items-center gap-2.5">
-                    <span className="text-base w-5 shrink-0">{flag}</span>
+                    <span className="text-base w-5 shrink-0 text-center">{flag}</span>
                     <div className="flex-1">
-                      <div className="flex justify-between items-center mb-0.5">
-                        <span className={`text-xs font-medium ${hi ? "text-amber-300" : "text-zinc-400"}`}>{country}</span>
-                        <span className={`text-xs font-mono tabular-nums ${hi ? "text-amber-300 font-bold" : "text-zinc-500"}`}>{pct}%</span>
+                      <div className="flex justify-between items-center mb-1">
+                        <span className={`text-xs ${hi ? "text-zinc-100 font-semibold" : "text-zinc-400"}`}>{country}</span>
+                        <span className={`text-xs font-mono tabular-nums ${hi ? "text-zinc-100 font-semibold" : "text-zinc-500"}`}>{pct}%</span>
                       </div>
-                      <div className="h-2 rounded-full bg-zinc-800 overflow-hidden">
+                      <div className="h-1 rounded-full bg-zinc-800/80 overflow-hidden">
                         <div className={`h-full rounded-full ${hi ? "bg-amber-400" : "bg-zinc-600"}`} style={{ width: `${(pct / 50) * 100}%` }} />
                       </div>
                     </div>
                   </div>
                 ))}
               </div>
-              <p className="text-zinc-700 text-[10px] mt-4">Sources: OECD Revenue Statistics 2024 · IMF Fiscal Monitor 2024</p>
+              <p className="text-zinc-700 text-[10px] mt-5">OECD Revenue Statistics 2024 · IMF 2024</p>
             </div>
 
             <div>
-              <p className="text-xs text-zinc-400 uppercase tracking-wide font-semibold mb-4">Debt interest as % of spending <span className="text-zinc-600 normal-case font-normal">(lower = less debt-trapped)</span></p>
-              <div className="space-y-3">
+              <p className="text-[10px] text-zinc-400 uppercase tracking-[0.18em] font-semibold mb-1">Debt interest / spending</p>
+              <p className="text-zinc-600 text-xs mb-6">Lower = less debt-trapped</p>
+              <div className="space-y-3.5">
                 {([
                   { country: "Germany", flag: "🇩🇪", pct: 4 },
                   { country: "France", flag: "🇫🇷", pct: 5 },
                   { country: "China", flag: "🇨🇳", pct: 6 },
-                  { country: "OECD avg", flag: "🌍", pct: 7 },
+                  { country: "OECD avg", flag: "—", pct: 7 },
                   { country: "UK", flag: "🇬🇧", pct: 8 },
                   { country: "Indonesia", flag: "🇮🇩", pct: 12 },
                   { country: "USA", flag: "🇺🇸", pct: 12 },
@@ -855,26 +964,26 @@ export default function FlowPage() {
                   { country: "Brazil", flag: "🇧🇷", pct: 28 },
                 ] as { country: string; flag: string; pct: number; hi?: boolean }[]).sort((a, b) => a.pct - b.pct).map(({ country, flag, pct, hi }) => (
                   <div key={country} className="flex items-center gap-2.5">
-                    <span className="text-base w-5 shrink-0">{flag}</span>
+                    <span className="text-base w-5 shrink-0 text-center">{flag}</span>
                     <div className="flex-1">
-                      <div className="flex justify-between items-center mb-0.5">
-                        <span className={`text-xs font-medium ${hi ? "text-red-300" : "text-zinc-400"}`}>{country}</span>
-                        <span className={`text-xs font-mono tabular-nums ${hi ? "text-red-300 font-bold" : "text-zinc-500"}`}>{pct}%</span>
+                      <div className="flex justify-between items-center mb-1">
+                        <span className={`text-xs ${hi ? "text-zinc-100 font-semibold" : "text-zinc-400"}`}>{country}</span>
+                        <span className={`text-xs font-mono tabular-nums ${hi ? "text-zinc-100 font-semibold" : "text-zinc-500"}`}>{pct}%</span>
                       </div>
-                      <div className="h-2 rounded-full bg-zinc-800 overflow-hidden">
+                      <div className="h-1 rounded-full bg-zinc-800/80 overflow-hidden">
                         <div className={`h-full rounded-full ${hi ? "bg-red-500" : "bg-zinc-600"}`} style={{ width: `${(pct / 30) * 100}%` }} />
                       </div>
                     </div>
                   </div>
                 ))}
               </div>
-              <p className="text-zinc-700 text-[10px] mt-4">Sources: IMF Fiscal Monitor 2024 · World Bank Government Finance Statistics 2024</p>
+              <p className="text-zinc-700 text-[10px] mt-5">IMF Fiscal Monitor 2024 · World Bank 2024</p>
             </div>
           </div>
 
-          <div className="mt-6 rounded-2xl border border-zinc-800 bg-gradient-to-br from-zinc-900/80 to-zinc-900/20 px-5 py-4">
-            <p className="text-zinc-300 text-sm leading-relaxed">
-              <span className="text-white font-semibold">The paradox: </span>India is one of the world&apos;s lowest-tax states by GDP share — yet channels more of that spending into debt interest than almost any peer. With only 6% of the population paying income tax, the government borrows to fill the gap, compounding a debt burden that crowds out spending on the 94% who need it most.
+          <div className="mt-12 pt-7 border-t border-zinc-800">
+            <p className="text-zinc-300 text-base leading-relaxed">
+              <span className="text-white font-semibold">The paradox.</span> India is one of the world&apos;s lowest-tax states by GDP share — yet channels more of that spending into debt interest than almost any peer. With only 6% of the population paying income tax, the government borrows heavily to fill the gap, compounding a debt burden that crowds out spending on the 94% who need it most.
             </p>
           </div>
         </section>
